@@ -1,0 +1,43 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Mar 24 11:37:33 2017
+
+@author: user
+"""
+
+def bisection(num):
+    p = num*num - 5*num - 7
+    return p
+
+
+a = 6 #take a input 
+b = 7 
+n = 50
+root = 0#take another input
+
+
+while n > 0:
+
+    c = (a + b)*0.5
+    q = bisection(c)
+    r = bisection(a)
+    s = bisection(b)
+    
+    
+    if q * r < 0:
+        b = c
+        
+        if c - a <= 0.0001:
+            root = c
+            
+    if q * s < 0:
+         a = c
+         
+         if c - b <= 0.0001:
+             root = c
+             
+    n = n-1
+    
+print(root)
+            
